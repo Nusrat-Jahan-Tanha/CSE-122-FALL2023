@@ -1,24 +1,26 @@
-#include<iostream>
+#include <iostream>
 #include <string>
+#include <set>
+
 using namespace std;
+
 int main() {
     string username;
     cin >> username;
-    int distinctCount = 0;
-    bool seen[26] = {false}; // To track if a character has been seen
-    // Iterate through the username
-    for (char ch : username) {
-        if (!seen[ch - 'a']) {
-            seen[ch - 'a'] = true;
-            distinctCount++;
-        }
+
+    set<char> distinctChars;
+
+    for (char c : username) {
+        distinctChars.insert(c);
     }
-    // Check if the count is odd or even
-    if (distinctCount % 2 == 0) {
-        cout << "IGNORE HIM!" << endl;
-    } else {
+
+    if (distinctChars.size() % 2 == 0) {
         cout << "CHAT WITH HER!" << endl;
+    } else {
+        cout << "IGNORE HIM!" << endl;
     }
+
     return 0;
 }
+
 
