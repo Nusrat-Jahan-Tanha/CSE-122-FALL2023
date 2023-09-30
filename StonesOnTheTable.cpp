@@ -1,21 +1,16 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
 int main() {
     int n;
     cin >> n;
-    string s;
-    cin >> s;
-
-    int minRemovals = 0;
-
-    for (int i = 1; i < n; ++i) {
-        if (s[i] == s[i - 1]) {
-            minRemovals++;
+    string stones;
+    cin >> stones;
+    int count = 0;
+    for (int i = 1; i < n; i++) {
+        if (stones[i] == stones[i - 1]) {
+            count++;
         }
     }
-
-    cout << minRemovals << endl;
-
+    cout << count << endl;
     return 0;
 }
